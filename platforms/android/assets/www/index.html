@@ -1,110 +1,221 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-    <meta charset="utf-8">
-	<meta name="format-detection" content="telephone=no">
-	<meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/my-app.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="#2196f3" />
+    <title>Rombong Sedekah</title>
+    <link rel="stylesheet" href="css/framework7.material.css" />
+    <link rel="stylesheet" href="css/framework7.material.colors.css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="img/logo-material.png" />
+    <link rel="stylesheet" href="css/rombong.css" />
   </head>
-  <body>
-    <!-- Status bar overlay for fullscreen mode-->
+  <body class="theme-green">
     <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <p>Left panel content goes here</p>
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">Awesome App</div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
-          <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-            <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="content-block-title">Welcome To My Awesome App</div>
-              <div class="content-block">
-                <div class="content-block-inner">
-                  <p>Couple of worlds here because my app is so awesome!</p>
-                  <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
-                </div>
+    <div class="panel panel-left panel-cover">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div data-page="panel-left" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Menu</div>
               </div>
-              <div class="content-block-title">What about simple navigation?</div>
+            </div>
+            <div class="page-content">
               <div class="list-block">
                 <ul>
-                  <li><a href="about.html" class="item-link">
+                  <li><a href="#berita-kemanusiaan.php" class="item-link close-panel">
                       <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title">About</div>
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Berita Kemanusiaan</div>
                         </div>
                       </div></a></li>
-                  <li><a href="services.html" class="item-link">
-                      <div class="item-content"> 
+                  <li><a href="#rencana-aksi.php" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
                         <div class="item-inner">
-                          <div class="item-title">Services</div>
+                          <div class="item-title">Rencana Aksi</div>
                         </div>
                       </div></a></li>
-                  <li><a href="form.html" class="item-link">
-                      <div class="item-content"> 
+                  <li><a href="#donasi.php" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
                         <div class="item-inner">
-                          <div class="item-title">Form</div>
+                          <div class="item-title">Donasi</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="tentang.html" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Tentang Kami</div>
                         </div>
                       </div></a></li>
                 </ul>
               </div>
-              <div class="content-block-title">Side panels</div>
               <div class="content-block">
-                <div class="row">
-                  <div class="col-50"><a href="#" data-panel="left" class="button open-panel">Left Panel</a></div>
-                  <div class="col-50"><a href="#" data-panel="right" class="button open-panel">Right Panel</a></div>
+                <p>Silakan Login atau melakukan Pendaftaran untuk memudahkan kami mencatat seluruh transaksi donasi yang Anda lakukan.</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#" class="item-link close-panel open-login-screen">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Login</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#daftar.php" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Daftar</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+			  </div>
+              <div class="content-block">
+                <p>Donasi Anda tetap dapat kami terima meskipun Anda tidak melakukan Login/Daftar.</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#edit-profil.php" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Profil Anda</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#donasi-anda.php" class="item-link close-panel">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                          <div class="item-title">Donasi Anda</div>
+                        </div>
+                      </div></a></li>
+                  <li><form action="logout.php" method="post"><input name="Lakukan" type="submit" class="button button-big" value="Log Out" ></form></li>
+                </ul>
+			  </div>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
+          <div data-page="index" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Rombong Sedekah</div>
+                <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+              </div>
+            </div>
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar-inner">
+					<a href="#" class="link open-login-screen">LOG IN</a>
+					<form action="#logout.php" method="post"><input name="Lakukan" type="submit" class="button" value="Log Out" ></form>     
+				</div>
+			</div>
+            <div class="page-content">
+              <div class="content-block-title" style="text-align:center;">Assalaamu 'alaikum</div>
+              <div class="content-block"><a href="#donasi.php" class="button button-big button-fill button-raised ripple">Kirim Donasi</a></div>
+             <div class="content-block-title">Berita Terbaru</div>
+    <div class="list-block media-list">
+      <ul>
+          <li><a href="#isi-berita.php?id=<?php echo $row_Latest_News['id']; ?>" class="item-link item-content">
+            <div class="item-media"><img src="img/logo-material.png" width="80"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title">Judul Item</div>
                 </div>
+              <div class="item-subtitle">Subjudul Item</div>
+              <div class="item-text">Echo htmlspecialchars(strip_tags($row_Latest_News['materi']), ENT_QUOTES)</div>
+            </div></a></li>
+      </ul>
+    </div>
+             <div class="content-block-title">Menu</div>
+			  <div class="list-block">
+                <ul>
+					<li><a href="#berita-kemanusiaan.php" class="item-link">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title">Berita Kemanusiaan</div>
+							</div>
+						</div>
+						</a>
+					</li>
+					<li><a href="#rencana-aksi.php" class="item-link">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title">Rencana Aksi</div>
+							</div>
+						</div>
+						</a>
+					</li>
+					<li><a href="tentang.html" class="item-link">
+						<div class="item-content">
+							<div class="item-inner">
+								<div class="item-title">Tentang Kami</div>
+							</div>
+						</div>
+						</a>
+					</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-        <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+      </div>
+    </div>
+    <div class="login-screen">
+      <div class="view">
+        <div class="page" data-page="donasi">
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Login Member</div>
+            <form ACTION="#cek-login.php" METHOD="POST" name="login" >
+              <div class="list-block inputs-list">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Email</div>
+                      <div class="item-input">
+                        <input type="email" name="email_login" placeholder="Email Anda" required/>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Password</div>
+                      <div class="item-input">
+                        <input type="password" name="password_login" placeholder="Password" required/>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block"><input type="submit" class="button button-big" value="Log In" /></div>
+              <div class="content-block">
+                <div class="list-block-label">
+                	<p><a href="#lupa-password.php"><strong>Lupa Password?</strong></a><br />Bila Anda belum memiliki akun, silakan mendaftar melalui<br /><a href="#daftar.php" class=" close-login-screen">LINK DAFTAR</a>.</p>
+                    <p><a href="#" class=" close-login-screen">TUTUP</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <script type="text/javascript" src="js/rombong.js"></script>
     <!-- Bawaan instalasi cordova -->
 	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
     <!-- Bawaan instalasi cordova -->
   </body>
 </html>
