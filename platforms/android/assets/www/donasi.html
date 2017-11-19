@@ -1,0 +1,117 @@
+<div data-page="donasi" class="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a href="forms.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">Donasi</div>
+      <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+    </div>
+  </div>
+			<div class="toolbar toolbar-bottom">
+				<div class="toolbar-inner">
+					<a href="#" class="link open-login-screen">LOG IN</a>
+				</div>
+			</div>
+  <div class="page-content">
+	<form action="" method="POST" autocomplete="off" role="presentation">
+    <div class="content-block-title">Form Donasi</div>
+    <div class="list-block inputs-list">
+      <ul>
+        <li>
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Nama Anda</div>
+              <div class="item-input">
+                <input type="text" name="nama_donasi" required />
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">E-mail</div>
+              <div class="item-input">
+                <input type="email" name="email_donasi" placeholder="" required  />
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Telepon/HP</div>
+              <div class="item-input">
+                <input type="tel" name="telepon_donasi" placeholder="" required />
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Peruntukan</div>
+              <div class="item-input">
+                <select name="peruntukan_donasi" class=""  required >
+					<option value=""> </option>
+					<option value="Aksi-Memakmurkan-Masjid">Aksi Memakmurkan Masjid</option>
+					<option value="Aksi-Sosial">Aksi Sosial</option>
+					<option value="Aksi-Bebaskan-Riba">Aksi Bebaskan Riba</option>
+					<option value="Aksi-Pinjaman-Bebaskan-Riba">Aksi Pinjaman Bebaskan Riba</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="align-top">
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Jumlah Donasi</div>
+              <div class="item-input">
+                <input type="number" placeholder="100.000" min="10000" name="jumlah" value="" style="text-align:right" class=""  required />
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Rekening Tujuan</div>
+              <div class="item-input">
+                    <select name="rekening"  required >
+                        <option value=""> </option>
+                        <option value="1">Bank Mandiri</option>
+                        <option value="2">Bank BNI</option>
+                        <option value="3">Bank BCA</option>
+                        <option value="4">Bank Syariah Mandiri</option>
+                    </select>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="align-top">
+          <div class="item-content">
+            <div class="item-inner"> 
+              <div class="item-title floating-label">Catatan (Boleh dikosongkan)</div>
+              <div class="item-input">
+                <textarea name="catatan" class="" ></textarea>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+	<div class="content-block">
+  	  <input type="hidden" name="MM_insert" value="form1" />
+	  <input type="submit" class="button button-big button-fill button-raised color-green" value="Simpan Donasi" />
+    </div>
+	</form>
+	<div class="content-block">
+		<p>Lengkapi semua isian yang diminta, kemudian klik tombol <strong>Kirim</strong>. Kami akan menginformasikan nomor rekening bank yang Anda pilih melalui halaman ini dan ke alamat email yang Anda masukkan.</p>
+		<p>Nominal transfer minimal yang ditetapkan oleh bank adalah Rp10.000,-</p>
+		<p>Dengan donasi melalui transfer bank, Anda dapat memilih jumlah nominal transfer dengan pecahan sesuai keinginan, misalnya <b>Rp152.354,-</b>. Hal seperti ini akan mempermudah kami melakukan konfirmasi transfer donasi. </p>
+		
+		<p>Apabila Anda ingin mencatat seluruh donasi Anda, silakan melakukan pendaftaran melalui <a href="#daftar.html">Link Pendaftaran</a> ini atau melalui tombol Login di bawah.</p>
+		
+    </div>
+  </div>
+</div>
