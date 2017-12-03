@@ -7,37 +7,60 @@ var myApp = new Framework7({
 
 // Expose Internal DOM library
 var $$ = Dom7;
-
-// Add main view
+//add main view
 var mainView = myApp.addView('.view-main', {
+  });
+
+myApp.onPageInit('rencana-aksi', function (page) {
+    // Select Template
+    var template = $$('#aksi-template').html();
+
+    // Compile and render
+    var compiledTemplate = Template7.compile(template);
+
+    // Defined as function "getrandom"
+    function getrandom() {
+        // Get JSON Data from UrbanDictionary API 
+        $$.getJSON('http://localhost/romsed/donotgit/news.json', function (json) {
+    
+        // Insert rendered template
+        $$('#content-wrap').html(compiledTemplate(json))
+        });
+    };
+    
+    // Execute to list UrbanDictionary Definitions
+    getrandom();
+    
+    // Select Pull to refresh content
+    var ptrContent = $$('.pull-to-refresh-content');
+    
+    // On refresh
+    ptrContent.on('refresh', function (e) {
+        // Emulate 1s loading
+        setTimeout(function () {
+    
+        // Execute getrandom to get new Definitions
+        getrandom();
+    
+        myApp.pullToRefreshDone();
+        }, 1000);
+    });
 });
 
-/* ===== Pull To Refresh Demo ===== */
-myApp.onPageInit('pull-to-refresh', function (page) {
-    // Dummy Content
-    var songs = ['Yellow Submarine', 'Don\'t Stop Me Now', 'Billie Jean', 'Californication'];
-    var authors = ['Beatles', 'Queen', 'Michael Jackson', 'Red Hot Chili Peppers'];
-    // Pull to refresh content
-    var ptrContent = $$(page.container).find('.pull-to-refresh-content');
-    // Add 'refresh' listener on it
-    ptrContent.on('refresh', function (e) {
-        // Emulate 2s loading
-        setTimeout(function () {
-            var picURL = 'http://lorempixel.com/88/88/abstract/' + Math.round(Math.random() * 10);
-            var song = songs[Math.floor(Math.random() * songs.length)];
-            var author = authors[Math.floor(Math.random() * authors.length)];
-            var linkHTML = '<li class="item-content">' +
-                                '<div class="item-media"><img src="' + picURL + '" width="44"/></div>' +
-                                '<div class="item-inner">' +
-                                    '<div class="item-title-row">' +
-                                        '<div class="item-title">' + song + '</div>' +
-                                    '</div>' +
-                                    '<div class="item-subtitle">' + author + '</div>' +
-                                '</div>' +
-                            '</li>';
-            ptrContent.find('ul').prepend(linkHTML);
-            // When loading done, we need to "close" it
-            myApp.pullToRefreshDone();
-        }, 2000);
+myApp.onPageInit('donasi', function (page) {
+    $$('form.ajax-submit').on('form:success', function (e) {
+        var xhr = e.detail.xhr; // actual XHR object
+        myApp.hidePreloader();
+        var data = e.detail.data; // Ajax repsonse from action file
+        //it's my data - Ok or not 
+        if (data === "awesome") {
+            myApp.alert('Data donasi Anda telah terkirim. Terima kasih.');
+            console.log(e.detail.data)
+        } else {
+            myApp.alert('Maaf, terjadi kesalahan.');
+            console.log("ERROR");
+            console.log(e.detail.data);
+            }
+    // do something with response data
     });
 });

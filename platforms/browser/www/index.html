@@ -13,6 +13,31 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css" />
     <link rel="icon" href="img/logo-material.png" />
     <link rel="stylesheet" href="css/rombong.css" />
+    <!-- Back Button Script-->
+    <script>
+      document.addEventListener("deviceready", appReady, false);
+      function appReady(){
+        document.addEventListener("backbutton", function(e){
+          var page=myApp.getCurrentView().activePage;
+          myApp.hidePreloader();
+          if ($$('.popup').hasClass('modal-in')) {
+            myApp.closeModal('.popup.modal-in');
+          }else{
+          if(page.name=="index"){
+            e.preventDefault();
+            if(confirm("Tutup Aplikasi?"))
+            {
+              navigator.app.clearHistory();
+              navigator.app.exitApp();
+            }
+          }else {
+          navigator.app.backHistory()
+          }
+          }
+        }, false);
+      }
+    </script>
+    <!-- Back Button Script-->
   </head>
   <body class="theme-green">
     <div class="statusbar-overlay"></div>
@@ -139,7 +164,7 @@
 						</div>
 						</a>
 					</li>
-					<li><a href="#rencana-aksi.php" class="item-link">
+					<li><a href="rencana-aksi.html" class="item-link">
 						<div class="item-content">
 							<div class="item-inner">
 								<div class="item-title">Rencana Aksi</div>
@@ -205,5 +230,7 @@
     <!-- Bawaan instalasi cordova -->
 	<script type="text/javascript" src="cordova.js"></script>
     <!-- Bawaan instalasi cordova -->
+  <script>
+  </script>
   </body>
 </html>
